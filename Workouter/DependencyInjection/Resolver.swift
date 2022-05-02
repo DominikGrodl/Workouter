@@ -14,5 +14,6 @@ extension Resolver: ResolverRegistering {
 		register { Firestore.firestore() }.scope(.application)
 		register { AuthenticationService() }.scope(.application)
 		register { ExercisesService() }.scope(.application)
+		register { CoreDataManager() }.scope(.application)
 	}
 }

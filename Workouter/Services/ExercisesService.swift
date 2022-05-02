@@ -70,7 +70,7 @@ final class ExercisesService: ObservableObject {
 				}
 				
 				self?.exercises = documents.compactMap { queryDocumentSnapshot in
-					let result = Result { try queryDocumentSnapshot.data(as: Exercise.self) }
+					let result = Result { try queryDocumentSnapshot.data(as: RemoteExercise.self) }
 					
 					switch result {
 					case .success(let reminder):
@@ -83,7 +83,7 @@ final class ExercisesService: ObservableObject {
 			}
 	}
 	
-	func saveExercise(_ exercise: Exercise) {
+	func saveExercise(_ exercise: RemoteExercise) {
 		do {
 			var newExercise = exercise
 			newExercise.userID = userId
