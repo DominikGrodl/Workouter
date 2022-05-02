@@ -187,7 +187,7 @@
 		DD17B7DF282007E90075D6CF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DD17B7E1282007F90075D6CF /* ViewModifiers */,
+				DD17B804282067280075D6CF /* Modifiers */,
 				DD17B7E0282007F20075D6CF /* Extensions */,
 			);
 			path = Helpers;
@@ -201,14 +201,6 @@
 				DD17B7E62820085F0075D6CF /* View+ext.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		DD17B7E1282007F90075D6CF /* ViewModifiers */ = {
-			isa = PBXGroup;
-			children = (
-				DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */,
-			);
-			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 		DD17B7F0282013330075D6CF /* Screens */ = {
@@ -227,6 +219,14 @@
 				DD17B7D5281FEE390075D6CF /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		DD17B804282067280075D6CF /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
