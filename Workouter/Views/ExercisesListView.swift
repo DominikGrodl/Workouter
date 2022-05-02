@@ -15,6 +15,13 @@ struct ExercisesListView: View {
 			List(viewModel.exercises, id: \.id) { item in
 				Text(item.name)
 			}
+			.toolbar(content: {
+				ToolbarItem(placement: .navigationBarTrailing) {
+					Button("Add") {
+						viewModel.createNewRemoteExercise(name: "Test", duration: 200)
+					}
+				}
+			})
 			.navigationTitle("Workouter")
 		}
     }
