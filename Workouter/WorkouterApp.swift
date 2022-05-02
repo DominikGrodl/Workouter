@@ -15,9 +15,12 @@ struct WorkouterApp: App {
 		FirebaseApp.configure()
 	}
 	
+	@StateObject var exercisesViewModel = ExercisesViewModel()
+	
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ExercisesListView()
+				.environmentObject(exercisesViewModel)
         }
     }
 }
