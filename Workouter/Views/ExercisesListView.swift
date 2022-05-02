@@ -22,11 +22,11 @@ struct ExercisesListView: View {
 					Text("Show local")
 				}
 				
-				List(showLocal ? viewModel.localExercises : viewModel.remoteExercises, id: \.id) { item in
-					Text(item.name)
-						.foregroundColor(item.storage == .local ? .red : .blue)
+				ForEach(showLocal ? viewModel.localExercises : viewModel.remoteExercises, id: \.id) { item in
+					ExerciseCapsuleView(exercise: item)
 				}
 			}
+			.scrollable()
 			.toolbar(content: {
 				ToolbarItem(placement: .navigationBarTrailing) {
 					Button("Add") {
