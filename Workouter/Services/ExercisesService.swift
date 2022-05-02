@@ -12,8 +12,8 @@ import FirebaseFirestoreSwift
 import Resolver
 
 final class ExercisesService: ObservableObject {
-	@Injected var db: Firestore
-	@Injected var authenticationService: AuthenticationService
+	@Injected private var db: Firestore
+	@Injected private var authenticationService: AuthenticationService
 	
 	@Published public var exercises: Exercises = []
 	
@@ -43,11 +43,18 @@ final class ExercisesService: ObservableObject {
 	deinit {
 		unsubscribe()
 	}
-	
-	func unsubscribe() {
-		if listenerRegistration != nil {
-			listenerRegistration?.remove()
-			listenerRegistration = nil
+}
+
+//MARK: - Public methods
+extension ExercisesService {
+	func saveExercise(_ exercise: RemoteExercise) {
+		do {
+			var newExercise = exercise
+			newExercise.userID = userId
+			let _ = try db.collection("exercises").addDocument(from: newExercise)
+		}
+		catch {
+			debugPrint(error.localizedDescription)
 		}
 	}
 	
@@ -82,15 +89,14 @@ final class ExercisesService: ObservableObject {
 				}
 			}
 	}
-	
-	func saveExercise(_ exercise: RemoteExercise) {
-		do {
-			var newExercise = exercise
-			newExercise.userID = userId
-			let _ = try db.collection("exercises").addDocument(from: newExercise)
-		}
-		catch {
-			debugPrint(error.localizedDescription)
+}
+
+//MARK: - Private methods
+private extension ExercisesService {
+	func unsubscribe() {
+		if listenerRegistration != nil {
+			listenerRegistration?.remove()
+			listenerRegistration = nil
 		}
 	}
 }

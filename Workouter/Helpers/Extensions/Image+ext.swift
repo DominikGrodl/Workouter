@@ -14,6 +14,8 @@ enum SFSymbol: String {
 	case localStorage = "externaldrive"
 	case plus = "plus"
 	case walkingFigure = "figure.walk"
+	case emptyFolder = "folder.badge.questionmark"
+	case checkmark = "checkmark"
 }
 
 extension Image {

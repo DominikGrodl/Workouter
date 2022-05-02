@@ -13,9 +13,9 @@ struct VerticalGroup<Content: View>: View {
 		case regular, large
 	}
 	
-	let title: String
-	let size: TitleSize
-	@ViewBuilder let content: Content
+	private let title: String
+	private let size: TitleSize
+	@ViewBuilder private let content: Content
 	
 	init(title: String, titleSize: TitleSize = .regular, @ViewBuilder content: () -> Content) {
 		self.title = title

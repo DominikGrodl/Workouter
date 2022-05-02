@@ -11,13 +11,26 @@ struct ExerciseCapsuleView: View {
 	
 	@State var exercise: ExerciseProtocol
 	
+	private var timeDurationString: String {
+		let formatter = DateComponentsFormatter()
+		formatter.unitsStyle = .abbreviated
+		let interval = TimeInterval(exercise.duration)
+		return formatter.string(from: interval) ?? "N/A"
+	}
+	
+	private var dateString: String {
+		let formatter = DateFormatter()
+		formatter.dateStyle = .short
+		return formatter.string(from: exercise.createdAt)
+	}
+	
 	var body: some View {
 		HStack(alignment: .top) {
 			
 			VStack(alignment: .leading) {
 				
 				Label(title: {
-					Text(exercise.name.capitalized)
+					Text("\(exercise.name.capitalized), \(exercise.location.capitalized)")
 				}, icon: {
 					Image(symbol: .walkingFigure)
 				})
@@ -26,16 +39,9 @@ struct ExerciseCapsuleView: View {
 				
 				HStack(spacing: 18) {
 					
-					VerticalGroup(title: exercise.name) {
-						HStack {
-							Text("\(exercise.duration)")
-								.font(.title3)
-								.fontWeight(.bold)
-							
-							Text("min")
-								.fontWeight(.bold)
-								.foregroundColor(.secondaryLabel)
-						}
+					VerticalGroup(title: "Duration" ) {
+						Text(timeDurationString)
+							.fontWeight(.semibold)
 					}
 					
 					Divider()
@@ -48,14 +54,13 @@ struct ExerciseCapsuleView: View {
 			
 			Spacer()
 			
-			Text(String(describing: exercise.createdAt))
+			Text(dateString)
 				.font(.footnote)
 				.foregroundColor(.secondaryLabel)
 		}
 		.padding()
-		.background(Color.secondarySystemBackground)
+		.background(Color.tertiarySystemBackground)
 		.clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-		.navigate(to: Text(exercise.name))
 	}
 }
 

@@ -10,8 +10,8 @@ import SwiftUI
 import Resolver
 
 final class ExercisesViewModel: ObservableObject {
-	@Published var remoteRepository: ExercisesService
-	@Published var localRepository: CoreDataManager
+	@Published private(set) var remoteRepository: ExercisesService
+	@Published private(set) var localRepository: CoreDataManager
 	
 	@Published var allExercises: Exercises
 	
@@ -19,17 +19,42 @@ final class ExercisesViewModel: ObservableObject {
 	
 	@Published var localExercises: Exercises
 	
+	@Published private(set) var showingSuccessIndication = false
+	
 	private var cancellables = Set<AnyCancellable>()
 	
 	init() {
 		self.allExercises = []
 		self.remoteExercises = []
 		self.localExercises = []
+		
 		remoteRepository = Resolver.resolve()
 		localRepository = Resolver.resolve()
 		
 		remoteRepository.subscribe()
 		
+		bindData()
+	}
+	
+}
+
+//MARK: - Public methods
+extension ExercisesViewModel {
+	func createNewExercise(name: String, location: String, duration: Int, storage: StorageType) {
+		switch storage {
+		case .remote:
+			createNewRemoteExercise(name: name, location: location, duration: duration)
+		case .local:
+			createNewLocalRepository(name: name, location: location, duration: duration)
+		}
+	}
+}
+
+
+//MARK: - Private methods
+private extension ExercisesViewModel {
+	
+	func bindData() {
 		remoteRepository.$exercises
 			.map { exercises in
 				exercises.sorted { lhs, rhs in
@@ -46,55 +71,60 @@ final class ExercisesViewModel: ObservableObject {
 			}
 			.assign(to: &$localExercises)
 		
-//		Publishers.MergeMany($remoteExercises, $localExercises)
-//			.assign(to: &$allExercises)
+		$remoteExercises
+			.sink { [weak self] exercises in
+				self?.appendAllExercisesWithRemoteExercises(exercises)
+			}
+			.store(in: &cancellables)
 		
-//		$remoteExercises
-//			.sink { [weak self] exercises in
-//
-//				self?.allExercises.removeAll(where: { exercise in
-//					exercise.storage == .remote
-//				})
-//
-//				self?.allExercises.append(contentsOf: exercises)
-//			}
-//			.store(in: &cancellables)
-//
-//		$localExercises
-//			.sink { [weak self] exercises in
-//
-//				self?.allExercises.removeAll(where: { exercise in
-//					exercise.storage == .local
-//				})
-//
-//				self?.allExercises.append(contentsOf: exercises)
-//			}
-//			.store(in: &cancellables)
+		$localExercises
+			.sink { [weak self] exercises in
+				self?.appendAllExercisesWithLocalExercises(exercises)
+			}
+			.store(in: &cancellables)
 	}
 	
-	func createNewExercise(name: String, duration: Int, storage: StorageType) {
-		switch storage {
-		case .remote:
-			createNewRemoteExercise(name: name, duration: duration)
-		case .local:
-			createNewLocalRepository(name: name, duration: duration)
+	func appendAllExercisesWithRemoteExercises(_ incomingExercises: Exercises) {
+		var filtered = allExercises.filter { exercise in
+			exercise.storage == .local
 		}
-	}
-	
-	private func constructAllExercises() {
-		let exercises = remoteExercises + localExercises
-		allExercises = exercises.sorted(by: { lhs, rhs in
+		
+		filtered.append(contentsOf: incomingExercises)
+		
+		allExercises = filtered.sorted(by: { lhs, rhs in
 			lhs.createdAt > rhs.createdAt
 		})
 	}
 	
-	private func createNewRemoteExercise(name: String, duration: Int) {
-		let newExercise = RemoteExercise(id: UUID(), name: name, duration: duration, createdAt: Date())
+	func appendAllExercisesWithLocalExercises(_ incomingExercises: Exercises) {
+		var filtered = allExercises.filter { exercise in
+			exercise.storage == .remote
+		}
+		
+		filtered.append(contentsOf: incomingExercises)
+		
+		allExercises = filtered.sorted(by: { lhs, rhs in
+			lhs.createdAt > rhs.createdAt
+		})
+	}
+	
+	func createNewRemoteExercise(name: String, location: String, duration: Int) {
+		let newExercise = RemoteExercise(id: UUID(), name: name, location: location, duration: duration, createdAt: Date())
 		remoteRepository.saveExercise(newExercise)
+		
+		showSuccessIndication()
 	}
 	
-	private func createNewLocalRepository(name: String, duration: Int) {
-		localRepository.saveData(name: name, duration: duration)
+	func createNewLocalRepository(name: String, location: String,duration: Int) {
+		localRepository.saveData(name: name, location: location, duration: duration)
+		
+		showSuccessIndication()
 	}
 	
+	func showSuccessIndication() {
+		showingSuccessIndication = true
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+			self?.showingSuccessIndication = false
+		}
+	}
 }

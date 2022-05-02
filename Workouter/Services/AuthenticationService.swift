@@ -10,7 +10,7 @@ import FirebaseAuth
 
 final class AuthenticationService: ObservableObject {
 	
-	@Published var user: User?
+	@Published private(set) var user: User?
 	
 	private var handle: AuthStateDidChangeListenerHandle?
 	
@@ -21,15 +21,6 @@ final class AuthenticationService: ObservableObject {
 	func signIn() {
 		if Auth.auth().currentUser == nil {
 			Auth.auth().signInAnonymously()
-		}
-	}
-	
-	func signOut() {
-		do {
-			try Auth.auth().signOut()
-		}
-		catch {
-			debugPrint("error when trying to sign out: \(error.localizedDescription)")
 		}
 	}
 	

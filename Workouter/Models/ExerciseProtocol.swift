@@ -7,12 +7,14 @@
 
 import Foundation
 
-enum StorageType {
-	case remote, local
+enum StorageType: String {
+	case remote = "remote"
+	case local = "local"
 }
 
 protocol ExerciseProtocol {
 	var id: UUID { get }
+	var location: String { get }
 	var name: String { get }
 	var duration: Int { get }
 	var createdAt: Date { get }

@@ -22,7 +22,7 @@ struct WorkouterApp: App {
 	
     var body: some Scene {
         WindowGroup {
-            ExercisesListView()
+			ContentView()
 				.environmentObject(exercisesViewModel)
 				.environment(\.managedObjectContext, coreDataManager.container.viewContext)
         }

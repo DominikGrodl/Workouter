@@ -18,7 +18,7 @@
 		DD17B7C0281FE2380075D6CF /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7BF281FE2380075D6CF /* AuthenticationService.swift */; };
 		DD17B7C2281FE28C0075D6CF /* ExercisesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7C1281FE28C0075D6CF /* ExercisesService.swift */; };
 		DD17B7C5281FE2C00075D6CF /* RemoteExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7C4281FE2C00075D6CF /* RemoteExercise.swift */; };
-		DD17B7C7281FE8F90075D6CF /* ExercisesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7C6281FE8F90075D6CF /* ExercisesListView.swift */; };
+		DD17B7C7281FE8F90075D6CF /* ExercisesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7C6281FE8F90075D6CF /* ExercisesListScreen.swift */; };
 		DD17B7CB281FE91C0075D6CF /* ExercisesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7CA281FE91C0075D6CF /* ExercisesViewModel.swift */; };
 		DD17B7CF281FEB0B0075D6CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD17B7CE281FEB0B0075D6CF /* GoogleService-Info.plist */; };
 		DD17B7D4281FED340075D6CF /* LocalExercise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7D2281FED340075D6CF /* LocalExercise.xcdatamodeld */; };
@@ -31,6 +31,12 @@
 		DD17B7E72820085F0075D6CF /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7E62820085F0075D6CF /* View+ext.swift */; };
 		DD17B7E92820088D0075D6CF /* VerticalGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7E82820088D0075D6CF /* VerticalGroup.swift */; };
 		DD17B7EB282008A60075D6CF /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7EA282008A60075D6CF /* StorageView.swift */; };
+		DD17B7ED28200BC70075D6CF /* iPhoneLandscapeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */; };
+		DD17B7EF28200D030075D6CF /* ExercisesAdaptableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7EE28200D030075D6CF /* ExercisesAdaptableList.swift */; };
+		DD17B7F22820134C0075D6CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7F12820134C0075D6CF /* ContentView.swift */; };
+		DD17B7F4282013AF0075D6CF /* AddExerciseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7F3282013AF0075D6CF /* AddExerciseScreen.swift */; };
+		DD17B7F828203DB90075D6CF /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7F728203DB90075D6CF /* EmptyStateView.swift */; };
+		DD17B800282057570075D6CF /* SuccessOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7FF282057570075D6CF /* SuccessOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +48,7 @@
 		DD17B7BF281FE2380075D6CF /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		DD17B7C1281FE28C0075D6CF /* ExercisesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesService.swift; sourceTree = "<group>"; };
 		DD17B7C4281FE2C00075D6CF /* RemoteExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExercise.swift; sourceTree = "<group>"; };
-		DD17B7C6281FE8F90075D6CF /* ExercisesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesListView.swift; sourceTree = "<group>"; };
+		DD17B7C6281FE8F90075D6CF /* ExercisesListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesListScreen.swift; sourceTree = "<group>"; };
 		DD17B7CA281FE91C0075D6CF /* ExercisesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewModel.swift; sourceTree = "<group>"; };
 		DD17B7CE281FEB0B0075D6CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD17B7D3281FED340075D6CF /* LocalExercise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalExercise.xcdatamodel; sourceTree = "<group>"; };
@@ -55,6 +61,12 @@
 		DD17B7E62820085F0075D6CF /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		DD17B7E82820088D0075D6CF /* VerticalGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGroup.swift; sourceTree = "<group>"; };
 		DD17B7EA282008A60075D6CF /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneLandscapeModifier.swift; sourceTree = "<group>"; };
+		DD17B7EE28200D030075D6CF /* ExercisesAdaptableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesAdaptableList.swift; sourceTree = "<group>"; };
+		DD17B7F12820134C0075D6CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD17B7F3282013AF0075D6CF /* AddExerciseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseScreen.swift; sourceTree = "<group>"; };
+		DD17B7F728203DB90075D6CF /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		DD17B7FF282057570075D6CF /* SuccessOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,14 +103,16 @@
 		DD17B7A2281FDEDF0075D6CF /* Workouter */ = {
 			isa = PBXGroup;
 			children = (
+				DD17B7A3281FDEE00075D6CF /* WorkouterApp.swift */,
 				DD17B7DF282007E90075D6CF /* Helpers */,
 				DD17B7C9281FE90D0075D6CF /* ViewModels */,
 				DD17B7C8281FE8FE0075D6CF /* Views */,
 				DD17B7C3281FE2BB0075D6CF /* Models */,
+				DD17B801282060B80075D6CF /* Managers */,
 				DD17B7BE281FE22C0075D6CF /* Services */,
 				DD17B7BB281FE1C40075D6CF /* DependencyInjection */,
-				DD17B7A3281FDEE00075D6CF /* WorkouterApp.swift */,
 				DD17B7A7281FDEE80075D6CF /* Assets.xcassets */,
+				DD17B7D2281FED340075D6CF /* LocalExercise.xcdatamodeld */,
 				DD17B7CE281FEB0B0075D6CF /* GoogleService-Info.plist */,
 				DD17B7A9281FDEE80075D6CF /* Preview Content */,
 			);
@@ -126,8 +140,6 @@
 			children = (
 				DD17B7BF281FE2380075D6CF /* AuthenticationService.swift */,
 				DD17B7C1281FE28C0075D6CF /* ExercisesService.swift */,
-				DD17B7D5281FEE390075D6CF /* CoreDataManager.swift */,
-				DD17B7D2281FED340075D6CF /* LocalExercise.xcdatamodeld */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -145,8 +157,8 @@
 		DD17B7C8281FE8FE0075D6CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD17B7F0282013330075D6CF /* Screens */,
 				DD17B7DB282007A10075D6CF /* Common */,
-				DD17B7C6281FE8F90075D6CF /* ExercisesListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +177,9 @@
 				DD17B7DC282007B50075D6CF /* ExerciseCapsuleView.swift */,
 				DD17B7E82820088D0075D6CF /* VerticalGroup.swift */,
 				DD17B7EA282008A60075D6CF /* StorageView.swift */,
+				DD17B7EE28200D030075D6CF /* ExercisesAdaptableList.swift */,
+				DD17B7F728203DB90075D6CF /* EmptyStateView.swift */,
+				DD17B7FF282057570075D6CF /* SuccessOverlayView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -191,8 +206,27 @@
 		DD17B7E1282007F90075D6CF /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		DD17B7F0282013330075D6CF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DD17B7F12820134C0075D6CF /* ContentView.swift */,
+				DD17B7C6281FE8F90075D6CF /* ExercisesListScreen.swift */,
+				DD17B7F3282013AF0075D6CF /* AddExerciseScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DD17B801282060B80075D6CF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DD17B7D5281FEE390075D6CF /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,18 +312,24 @@
 			files = (
 				DD17B7D4281FED340075D6CF /* LocalExercise.xcdatamodeld in Sources */,
 				DD17B7E5282008410075D6CF /* Image+ext.swift in Sources */,
+				DD17B7F828203DB90075D6CF /* EmptyStateView.swift in Sources */,
+				DD17B7EF28200D030075D6CF /* ExercisesAdaptableList.swift in Sources */,
 				DD17B7E72820085F0075D6CF /* View+ext.swift in Sources */,
+				DD17B7ED28200BC70075D6CF /* iPhoneLandscapeModifier.swift in Sources */,
 				DD17B7BD281FE1DD0075D6CF /* Resolver.swift in Sources */,
+				DD17B800282057570075D6CF /* SuccessOverlayView.swift in Sources */,
+				DD17B7F22820134C0075D6CF /* ContentView.swift in Sources */,
 				DD17B7CB281FE91C0075D6CF /* ExercisesViewModel.swift in Sources */,
 				DD17B7E92820088D0075D6CF /* VerticalGroup.swift in Sources */,
 				DD17B7D8281FF4B20075D6CF /* ExerciseProtocol.swift in Sources */,
-				DD17B7C7281FE8F90075D6CF /* ExercisesListView.swift in Sources */,
+				DD17B7C7281FE8F90075D6CF /* ExercisesListScreen.swift in Sources */,
 				DD17B7A4281FDEE00075D6CF /* WorkouterApp.swift in Sources */,
 				DD17B7E3282008290075D6CF /* Color+ext.swift in Sources */,
 				DD17B7C2281FE28C0075D6CF /* ExercisesService.swift in Sources */,
 				DD17B7D6281FEE390075D6CF /* CoreDataManager.swift in Sources */,
 				DD17B7DD282007B50075D6CF /* ExerciseCapsuleView.swift in Sources */,
 				DD17B7C0281FE2380075D6CF /* AuthenticationService.swift in Sources */,
+				DD17B7F4282013AF0075D6CF /* AddExerciseScreen.swift in Sources */,
 				DD17B7DA281FF4D00075D6CF /* LocalExercise.swift in Sources */,
 				DD17B7EB282008A60075D6CF /* StorageView.swift in Sources */,
 				DD17B7C5281FE2C00075D6CF /* RemoteExercise.swift in Sources */,

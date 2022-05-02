@@ -4,9 +4,10 @@
         <attribute name="entityCreatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="entityDuration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="entityId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="entityLocation" optional="YES" attributeType="String"/>
         <attribute name="entityNameString" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="LocalExercise" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="LocalExercise" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

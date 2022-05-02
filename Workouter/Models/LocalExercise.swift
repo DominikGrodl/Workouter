@@ -9,6 +9,10 @@ import Foundation
 import CoreData
 
 extension LocalExercise: ExerciseProtocol {
+	var location: String {
+		entityLocation ?? "Unknown location"
+	}
+	
 	public var id: UUID {
 		entityId ?? UUID()
 	}

@@ -11,7 +11,7 @@ struct StorageView: View {
 	
 	let storage: StorageType
 	
-	var icon: SFSymbol {
+	private var icon: SFSymbol {
 		switch storage {
 		case .remote:
 			return .remoteStorage
@@ -20,7 +20,7 @@ struct StorageView: View {
 		}
 	}
 	
-	var color: Color {
+	private var color: Color {
 		switch storage {
 		case .remote:
 			return .mint
@@ -29,10 +29,10 @@ struct StorageView: View {
 		}
 	}
 	
-	var title: String {
+	private var title: String {
 		switch storage {
 		case .remote:
-			return "Cloud"
+			return "Remote"
 		case .local:
 			return "Local"
 		}
