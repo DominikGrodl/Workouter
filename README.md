@@ -1,11 +1,14 @@
 #  Workouter
-🇨🇿
+
+# 🇨🇿
+
 Workouter je aplikace pro zaznamenávání cvičení. Umožňuje zadávat cvičení a ukládat je buď lokálně, nebo na server. Můžete zadat dobu trvání cvičení a nastavit místo konání. Aplikace také sleduje různé aktivity a uchovává je seskupené do skupin, aby k nim měl uživatel přístup.
 
 ## Průchod aplikací
+
 Aplikace je jednoduchá s pouze dvěma obrazovkami. Myslím, že v tomto případě by se hlavní pozornost měla soustředit na samotná data a uživatel by neměl být rozptylován dalšími prvky. Proto jsem se rozhodl implementovat obrazovku ExercisesListScreen jako jedinou samostatnou obrazovku. Obrazovka AddExerciseScreen funguje jako sheet prezentovaný z obrazovky ExercisesListScreen, nikoli jako samostatná obrazovka v TabView, aby se uživatel opět soustředil na to, co je důležité.
 
-##Implementace
+## Implementace
 
 Aplikace je napsána čistě ve Swiftu a SwiftUI s architekturou MVVM. Používá Dependency Injection (Resolver) pro services/managers a Environment values pro ViewModels do Views.
 - Services
@@ -15,7 +18,8 @@ Aplikace je napsána čistě ve Swiftu a SwiftUI s architekturou MVVM. Použív�
 	
 Aplikace používá protokol ExerciseProtocol, ke kterému konformují LocalExercise a RemoteExercise. Tím je zajištěno, že Views jsou schopny zobrazit seznam obou modelů a nezáleží na tom, zda se jedná o Local nebo Remote model.
 
-🇬🇧
+# 🇬🇧
+
 Workouter is an exercise tracking app. It allows you to keep track of your workouts and store those either localy, or remotely. You can specify the duration of the workout and set its location. The app also keeps track of different activities and keeps those grouped together for you to view.
 
 ## App flow
