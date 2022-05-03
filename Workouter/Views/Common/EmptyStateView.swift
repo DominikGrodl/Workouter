@@ -11,12 +11,11 @@ struct EmptyStateView: View {
     var body: some View {
 		VStack {
 			Image(symbol: .emptyFolder)
-				.font(.system(size: 100, weight: .bold, design: .rounded))
+				.font(.system(size: 100, weight: .regular, design: .rounded))
 				.foregroundColor(.secondaryLabel)
-				.padding(.bottom)
 			
-			Text("You have no exercises saved in this location. Add some, they will apear here once you do.")
-				.font(.title3)
+			Text("No exercises here")
+				.font(.title)
 				.fontWeight(.semibold)
 				.foregroundColor(.secondaryLabel)
 				.lineLimit(0)

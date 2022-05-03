@@ -18,13 +18,11 @@ struct WorkouterApp: App {
 	}
 	
 	@StateObject var exercisesViewModel = ExercisesViewModel()
-	@StateObject var coreDataManager = CoreDataManager()
 	
     var body: some Scene {
         WindowGroup {
 			ContentView()
 				.environmentObject(exercisesViewModel)
-				.environment(\.managedObjectContext, coreDataManager.container.viewContext)
         }
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 final class CoreDataManager: ObservableObject {
+	
 	let container = NSPersistentContainer(name: "LocalExercise")
 	
 	@Published private(set) var localExercises: [LocalExercise] = []

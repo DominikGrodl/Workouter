@@ -12,7 +12,7 @@ struct ContentView: View {
 		NavigationView {
 			ExercisesListScreen()
 		}
-		.iPhoneLandscapeNavigationModifier()
+		.navigationViewStyle(.stack)
     }
 }
 

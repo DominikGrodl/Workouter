@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct StorageView: View {
-	
+struct StorageLabel: View {
 	let storage: StorageType
 	
 	private var icon: SFSymbol {
@@ -29,26 +28,27 @@ struct StorageView: View {
 		}
 	}
 	
-	private var title: String {
-		switch storage {
-		case .remote:
-			return "Remote"
-		case .local:
-			return "Local"
+	var body: some View {
+		Label {
+			Text(storage.rawValue.capitalized)
+				.foregroundColor(color)
+				.fontWeight(.semibold)
+		} icon: {
+			Image(symbol: icon)
+				.symbolRenderingMode(.hierarchical)
+				.foregroundColor(color)
 		}
+
 	}
+}
+
+struct StorageView: View {
+	
+	let storage: StorageType
 	
 	var body: some View {
 		VerticalGroup(title: "Storage") {
-			HStack {
-				Image(symbol: icon)
-					.symbolRenderingMode(.hierarchical)
-					.foregroundColor(color)
-				
-				Text(title)
-					.foregroundColor(color)
-					.fontWeight(.semibold)
-			}
+			StorageLabel(storage: storage)
 		}
 	}
 }

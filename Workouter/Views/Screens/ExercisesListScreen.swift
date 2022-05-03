@@ -33,32 +33,36 @@ struct ExercisesListScreen: View {
 	}
 	
 	var body: some View {
-		VerticalGroup(title: "\(filter.rawValue) exercises", titleSize: .large) {
-			ExercisesAdaptableList(exercises: exercises)
+		
+		VStack {
+			GroupsStackView(exercises: $viewModel.allExercises)
+			
+			VerticalGroup(title: "\(filter.rawValue) exercises", titleSize: .large) {
+				ExercisesAdaptableList(exercises: exercises)
+			}
+			.padding()
 		}
-		.padding()
 		.scrollable()
 		.overlay(content: {
-			SuccessOverlayView()
-				.opacity(viewModel.showingSuccessIndication ? 1 : 0)
-				.animation(.default, value: viewModel.showingSuccessIndication)
+			successOverlay
 		})
 		.toolbar(content: {
-			ToolbarItem(placement: .navigationBarLeading) {
-				addExerciseButtonItem
-			}
+			ToolbarItem(placement: .navigationBarLeading) { addExerciseButtonItem }
 			
-			ToolbarItem(placement: .navigationBarTrailing) {
-				filterToolbarItem
-			}
+			ToolbarItem(placement: .navigationBarTrailing) { filterToolbarItem }
 		})
 		.sheet(isPresented: $showingAddExerciseScreen, content: {
 			AddExerciseScreen()
 		})
-		.background(Color.secondarySystemBackground)
+		.mainBackgroundStyle()
 		.navigationTitle("Workouter")
 	}
 	
+	private var successOverlay: some View {
+		SuccessOverlayView()
+			.opacity(viewModel.showingSuccessIndication ? 1 : 0)
+			.animation(.default, value: viewModel.showingSuccessIndication)
+	}
 	
 	private var addExerciseButtonItem: some View {
 		Button {
@@ -69,16 +73,12 @@ struct ExercisesListScreen: View {
 	}
 	
 	private var filterToolbarItem: some View {
-		HStack {
-			Text("Showing")
-			
-			Menu(filter.rawValue) {
-				ForEach(ExercisesFilter.allCases, id: \.self) { filter in
-					Button {
-						self.filter = filter
-					} label: {
-						Text(filter.rawValue)
-					}
+		Menu("Showing " + filter.rawValue.lowercased()) {
+			ForEach(ExercisesFilter.allCases, id: \.self) { filter in
+				Button {
+					self.filter = filter
+				} label: {
+					Text(filter.rawValue)
 				}
 			}
 		}

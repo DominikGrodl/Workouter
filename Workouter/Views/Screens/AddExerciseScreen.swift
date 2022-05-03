@@ -43,45 +43,53 @@ struct AddExerciseScreen: View {
 		return formatter.string(from: timeDifference) ?? "N/A"
 	}
 	
-    var body: some View {
+	var body: some View {
 		NavigationView {
 			Form {
 				Section {
 					TextField("Workout name", text: $workoutName)
 					TextField("Location", text: $location)
+				}
+				
+				Section {
 					DatePicker("Start", selection: $sinceDate, in: ...Date.now)
 					DatePicker("End", selection: $toDate, in: sinceDate...Date.now)
-					
-					Picker("Save", selection: $selectedStorage) {
-						ForEach(availableStorages, id: \.self) {
-							Text($0.rawValue)
-						}
-					}
-					.pickerStyle(.segmented)
 					
 					Text("Duration: \(timeDurationString)")
 				}
 				
-				Button(action: putDataToDatabase) {
-					Text("Save")
+				Section {
+					Picker("Storage option", selection: $selectedStorage) {
+						ForEach(availableStorages, id: \.self) {
+							StorageLabel(storage: $0)
+								.labelStyle(.titleAndIcon)
+						}
+					}
 				}
-				.disabled(isDisabled)
+				
+				Section {
+					Button(action: putDataToDatabase) {
+						Text("Save")
+					}
+					.disabled(isDisabled)
+				}
 				
 			}
 			.navigationTitle("Add exercise")
 			.toolbar {
-				ToolbarItem(placement: .navigationBarTrailing) {
-					Button {
-						dismiss.callAsFunction()
-					} label: {
-						Image(symbol: .xmarkCircleFill)
-							.foregroundColor(.secondary)
-					}
-
-				}
+				ToolbarItem(placement: .navigationBarTrailing) { dismissToolbarItem }
 			}
 		}
-    }
+	}
+	
+	var dismissToolbarItem: some View {
+		Button {
+			dismiss.callAsFunction()
+		} label: {
+			Image(symbol: .xmarkCircleFill)
+				.foregroundColor(.secondary)
+		}
+	}
 	
 	private func putDataToDatabase() {
 		generator.prepare()
@@ -92,7 +100,7 @@ struct AddExerciseScreen: View {
 }
 
 struct AddExerciseScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AddExerciseScreen()
-    }
+	static var previews: some View {
+		AddExerciseScreen()
+	}
 }

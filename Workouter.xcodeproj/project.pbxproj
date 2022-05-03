@@ -31,12 +31,17 @@
 		DD17B7E72820085F0075D6CF /* View+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7E62820085F0075D6CF /* View+ext.swift */; };
 		DD17B7E92820088D0075D6CF /* VerticalGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7E82820088D0075D6CF /* VerticalGroup.swift */; };
 		DD17B7EB282008A60075D6CF /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7EA282008A60075D6CF /* StorageView.swift */; };
-		DD17B7ED28200BC70075D6CF /* iPhoneLandscapeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */; };
 		DD17B7EF28200D030075D6CF /* ExercisesAdaptableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7EE28200D030075D6CF /* ExercisesAdaptableList.swift */; };
 		DD17B7F22820134C0075D6CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7F12820134C0075D6CF /* ContentView.swift */; };
 		DD17B7F4282013AF0075D6CF /* AddExerciseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7F3282013AF0075D6CF /* AddExerciseScreen.swift */; };
 		DD17B7F828203DB90075D6CF /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7F728203DB90075D6CF /* EmptyStateView.swift */; };
 		DD17B800282057570075D6CF /* SuccessOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B7FF282057570075D6CF /* SuccessOverlayView.swift */; };
+		DD17B808282070440075D6CF /* GroupsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B807282070440075D6CF /* GroupsStackView.swift */; };
+		DD17B80B282071E20075D6CF /* GroupDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B80A282071E20075D6CF /* GroupDetail.swift */; };
+		DD17B80E282074F20075D6CF /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = DD17B80D282074F20075D6CF /* Collections */; };
+		DD17B81028207A6F0075D6CF /* GroupBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17B80F28207A6F0075D6CF /* GroupBubbleView.swift */; };
+		DDBDAF6828210EA800BD3FAD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBDAF6728210EA800BD3FAD /* Launch Screen.storyboard */; };
+		DDBDAF6D2821158D00BD3FAD /* String+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDAF6C2821158D00BD3FAD /* String+ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,12 +66,16 @@
 		DD17B7E62820085F0075D6CF /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		DD17B7E82820088D0075D6CF /* VerticalGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGroup.swift; sourceTree = "<group>"; };
 		DD17B7EA282008A60075D6CF /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
-		DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneLandscapeModifier.swift; sourceTree = "<group>"; };
 		DD17B7EE28200D030075D6CF /* ExercisesAdaptableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesAdaptableList.swift; sourceTree = "<group>"; };
 		DD17B7F12820134C0075D6CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD17B7F3282013AF0075D6CF /* AddExerciseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseScreen.swift; sourceTree = "<group>"; };
 		DD17B7F728203DB90075D6CF /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		DD17B7FF282057570075D6CF /* SuccessOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOverlayView.swift; sourceTree = "<group>"; };
+		DD17B807282070440075D6CF /* GroupsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsStackView.swift; sourceTree = "<group>"; };
+		DD17B80A282071E20075D6CF /* GroupDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetail.swift; sourceTree = "<group>"; };
+		DD17B80F28207A6F0075D6CF /* GroupBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBubbleView.swift; sourceTree = "<group>"; };
+		DDBDAF6728210EA800BD3FAD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DDBDAF6C2821158D00BD3FAD /* String+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +85,7 @@
 			files = (
 				DD17B7B3281FE01B0075D6CF /* Resolver in Frameworks */,
 				DD17B7BA281FE1360075D6CF /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				DD17B80E282074F20075D6CF /* Collections in Frameworks */,
 				DD17B7B6281FE1360075D6CF /* FirebaseAuth in Frameworks */,
 				DD17B7B8281FE1360075D6CF /* FirebaseFirestore in Frameworks */,
 			);
@@ -104,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				DD17B7A3281FDEE00075D6CF /* WorkouterApp.swift */,
-				DD17B7DF282007E90075D6CF /* Helpers */,
+				DD17B7DF282007E90075D6CF /* Utilities */,
 				DD17B7C9281FE90D0075D6CF /* ViewModels */,
 				DD17B7C8281FE8FE0075D6CF /* Views */,
 				DD17B7C3281FE2BB0075D6CF /* Models */,
@@ -180,17 +190,19 @@
 				DD17B7EE28200D030075D6CF /* ExercisesAdaptableList.swift */,
 				DD17B7F728203DB90075D6CF /* EmptyStateView.swift */,
 				DD17B7FF282057570075D6CF /* SuccessOverlayView.swift */,
+				DD17B807282070440075D6CF /* GroupsStackView.swift */,
+				DD17B80F28207A6F0075D6CF /* GroupBubbleView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		DD17B7DF282007E90075D6CF /* Helpers */ = {
+		DD17B7DF282007E90075D6CF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DD17B804282067280075D6CF /* Modifiers */,
+				DDBDAF6628210E7F00BD3FAD /* LaunchScreen */,
 				DD17B7E0282007F20075D6CF /* Extensions */,
 			);
-			path = Helpers;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		DD17B7E0282007F20075D6CF /* Extensions */ = {
@@ -199,6 +211,7 @@
 				DD17B7E2282008290075D6CF /* Color+ext.swift */,
 				DD17B7E4282008410075D6CF /* Image+ext.swift */,
 				DD17B7E62820085F0075D6CF /* View+ext.swift */,
+				DDBDAF6C2821158D00BD3FAD /* String+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +222,7 @@
 				DD17B7F12820134C0075D6CF /* ContentView.swift */,
 				DD17B7C6281FE8F90075D6CF /* ExercisesListScreen.swift */,
 				DD17B7F3282013AF0075D6CF /* AddExerciseScreen.swift */,
+				DD17B80A282071E20075D6CF /* GroupDetail.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -221,12 +235,12 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		DD17B804282067280075D6CF /* Modifiers */ = {
+		DDBDAF6628210E7F00BD3FAD /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DD17B7EC28200BC70075D6CF /* iPhoneLandscapeModifier.swift */,
+				DDBDAF6728210EA800BD3FAD /* Launch Screen.storyboard */,
 			);
-			path = Modifiers;
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +264,7 @@
 				DD17B7B5281FE1360075D6CF /* FirebaseAuth */,
 				DD17B7B7281FE1360075D6CF /* FirebaseFirestore */,
 				DD17B7B9281FE1360075D6CF /* FirebaseFirestoreSwift-Beta */,
+				DD17B80D282074F20075D6CF /* Collections */,
 			);
 			productName = Workouter;
 			productReference = DD17B7A0281FDEDF0075D6CF /* Workouter.app */;
@@ -282,6 +297,7 @@
 			packageReferences = (
 				DD17B7B1281FE01B0075D6CF /* XCRemoteSwiftPackageReference "Resolver" */,
 				DD17B7B4281FE1360075D6CF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				DD17B80C282074F20075D6CF /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = DD17B7A1281FDEDF0075D6CF /* Products */;
 			projectDirPath = "";
@@ -299,6 +315,7 @@
 			files = (
 				DD17B7AB281FDEE90075D6CF /* Preview Assets.xcassets in Resources */,
 				DD17B7CF281FEB0B0075D6CF /* GoogleService-Info.plist in Resources */,
+				DDBDAF6828210EA800BD3FAD /* Launch Screen.storyboard in Resources */,
 				DD17B7A8281FDEE80075D6CF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,13 +329,16 @@
 			files = (
 				DD17B7D4281FED340075D6CF /* LocalExercise.xcdatamodeld in Sources */,
 				DD17B7E5282008410075D6CF /* Image+ext.swift in Sources */,
+				DDBDAF6D2821158D00BD3FAD /* String+ext.swift in Sources */,
 				DD17B7F828203DB90075D6CF /* EmptyStateView.swift in Sources */,
 				DD17B7EF28200D030075D6CF /* ExercisesAdaptableList.swift in Sources */,
 				DD17B7E72820085F0075D6CF /* View+ext.swift in Sources */,
-				DD17B7ED28200BC70075D6CF /* iPhoneLandscapeModifier.swift in Sources */,
+				DD17B81028207A6F0075D6CF /* GroupBubbleView.swift in Sources */,
 				DD17B7BD281FE1DD0075D6CF /* Resolver.swift in Sources */,
 				DD17B800282057570075D6CF /* SuccessOverlayView.swift in Sources */,
+				DD17B80B282071E20075D6CF /* GroupDetail.swift in Sources */,
 				DD17B7F22820134C0075D6CF /* ContentView.swift in Sources */,
+				DD17B808282070440075D6CF /* GroupsStackView.swift in Sources */,
 				DD17B7CB281FE91C0075D6CF /* ExercisesViewModel.swift in Sources */,
 				DD17B7E92820088D0075D6CF /* VerticalGroup.swift in Sources */,
 				DD17B7D8281FF4B20075D6CF /* ExerciseProtocol.swift in Sources */,
@@ -467,6 +487,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,6 +517,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -551,6 +573,14 @@
 				minimumVersion = 8.10.0;
 			};
 		};
+		DD17B80C282074F20075D6CF /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -573,6 +603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD17B7B4281FE1360075D6CF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		DD17B80D282074F20075D6CF /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD17B80C282074F20075D6CF /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
 		};
 /* End XCSwiftPackageProductDependency section */
 

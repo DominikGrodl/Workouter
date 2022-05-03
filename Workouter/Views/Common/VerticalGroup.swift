@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+///Vertical group is esentially a VStack i'with predefined behaviour. It shows a title in the upper leading corner and specified content. It takes a TitleSize enum as a paramenter to determine the size of the title with initial value being TitleSize.regular
+
 struct VerticalGroup<Content: View>: View {
 	
 	enum TitleSize {

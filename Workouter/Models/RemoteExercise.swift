@@ -17,7 +17,6 @@ struct RemoteExercise {
 }
 
 extension RemoteExercise: Codable { }
-extension RemoteExercise: Identifiable { }
 
 extension RemoteExercise: ExerciseProtocol {
 	var storage: StorageType {

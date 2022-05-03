@@ -25,9 +25,9 @@ struct ExerciseCapsuleView: View {
 	}
 	
 	var body: some View {
-		HStack(alignment: .top) {
-			
-			VStack(alignment: .leading) {
+		
+		VStack(alignment: .leading) {
+			HStack(alignment: .top) {
 				
 				Label(title: {
 					Text("\(exercise.name.capitalized), \(exercise.location.capitalized)")
@@ -37,29 +37,28 @@ struct ExerciseCapsuleView: View {
 				.font(.footnote)
 				.foregroundColor(.accentColor)
 				
-				HStack(spacing: 18) {
-					
-					VerticalGroup(title: "Duration" ) {
-						Text(timeDurationString)
-							.fontWeight(.semibold)
-					}
-					
-					Divider()
-					
-					StorageView(storage: exercise.storage)
-				}
+				Spacer()
 				
+				Text(dateString)
+					.font(.footnote)
+					.foregroundColor(.secondaryLabel)
 				
 			}
 			
-			Spacer()
-			
-			Text(dateString)
-				.font(.footnote)
-				.foregroundColor(.secondaryLabel)
+			HStack(spacing: 18) {
+				
+				VerticalGroup(title: "Duration" ) {
+					Text(timeDurationString)
+						.fontWeight(.semibold)
+				}
+				
+				Divider()
+				
+				StorageView(storage: exercise.storage)
+			}
 		}
 		.padding()
-		.background(Color.tertiarySystemBackground)
+		.secondaryBackgroundStyle()
 		.clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 	}
 }
