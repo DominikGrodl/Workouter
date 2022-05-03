@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+///ExerciseCapsuleView takes an object conforming to ExerciseProtocol and dispays it in a view. The name + location properties are added to be displyed in the header. The lineLimit of the header title is set to 2 with truncationMode = .middle to ensure that both start of the activity name and the place are visible
+
 struct ExerciseCapsuleView: View {
 	
 	@State var exercise: ExerciseProtocol
@@ -31,6 +33,8 @@ struct ExerciseCapsuleView: View {
 				
 				Label(title: {
 					Text("\(exercise.name.capitalized), \(exercise.location.capitalized)")
+						.lineLimit(2)
+						.truncationMode(.middle)
 				}, icon: {
 					Image(symbol: .walkingFigure)
 				})
