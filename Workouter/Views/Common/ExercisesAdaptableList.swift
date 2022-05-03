@@ -9,6 +9,8 @@ import SwiftUI
 
 ///ExercisesAdaptableList uses horizontalSizeClass to determine whether to show a one or a two column layout. The horizontalSizeClass is regular on iPads and Pro iPhones and compact on smaller devices. This ensures that two columns are shown only when there is enough space
 
+//Clarification after the sumbission- this view uses @Binding for exercises array even though it does not change the array. This is due to the fact that sometimes, when using simple @State, the variable misses a @Published property update in the ViewModel. In my experience, it happened once in ≈ 10 updates. I tried to get to the issue, but I believe it is a problem with SwiftUI. Therefore, as the issue is not present when using @Binding, I chose this solution over different, more complicated ones.
+
 struct ExercisesAdaptableList: View {
 	
 	@Environment(\.horizontalSizeClass) private var horizontalSizeClass
