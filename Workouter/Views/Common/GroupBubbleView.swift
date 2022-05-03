@@ -14,6 +14,7 @@ struct GroupBubbleView: View {
 	
     var body: some View {
 		Text(title.capitalized.truncated(after: 20))
+			.font(.headline)
 			.padding(.vertical, 6)
 			.padding(.horizontal, 10)
 			.secondaryBackgroundStyle()
